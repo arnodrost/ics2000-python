@@ -107,6 +107,18 @@ class Hub:
         cmd = self.simple_command(entity, 0, 1)
         self.send_command(cmd.getcommand())
 
+    def blinds_up(self, entity):
+        cmd = self.simple_command(entity, 0, 2)
+        self.send_command(cmd.getcommand())
+
+    def blinds_down(self, entity):
+        cmd = self.simple_command(entity, 2, 2)
+        self.send_command(cmd.getcommand())
+
+    def blinds_stop(self, entity):
+        cmd = self.simple_command(entity, 1, 2)
+        self.send_command(cmd.getcommand())
+
     def dim(self, entity, level):
         # level is in range 1-10
         cmd = self.simple_command(entity, 1, level)
